@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Sharma Metal Works{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<header><div class="wrap"><a class="logo" href="/">Sharma Metal Works</a>
+<nav><a href="/">Home</a><a href="/products">Products</a><a href="/inquiry">Inquiry</a></nav></div></header>
+<main class="wrap">{% with m = get_flashed_messages() %}{% for x in m %}<p class="flash">{{ x }}</p>{% endfor %}{% endwith %}
+{% block content %}{% endblock %}</main>
+<footer><div class="wrap">Served by server: <code>{{ server_id }}</code></div></footer>
+</body></html>
